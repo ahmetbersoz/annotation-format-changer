@@ -8,7 +8,7 @@ def convert_cvat_xml_to_csv(xml_path, csv_path):
 
     # 1. Collect the full set of possible categories (labels) from the meta section
     #    This ensures we include categories that might appear zero times in the images.
-    labels_root = root.find("./meta/project/labels")
+    labels_root = root.find("./meta/task/labels")
     all_categories = []
     if labels_root is not None:
         for label_node in labels_root.findall("label"):
